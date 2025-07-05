@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner Sc=new Scanner(System.in);
+	Main obj=new Main();
+	int n=Sc.nextInt();
+	int arr[] = new int[n];
+	for(int i=0;i<n;i++)
+	{
+	    arr[i]=Sc.nextInt();
+	}
+	obj.selection(arr);
+	}
+	public static void selection(int arr[])
+	{
+	   for(int i=0;i<arr.length-1;i++)
+	   {
+	      int minindex=i;
+	      for(int j=i+1;j<arr.length;j++)
+	      {
+	          if(arr[minindex]>arr[j])
+	          {
+	              minindex=j;
+	          }
+	      }
+	      int temp=arr[minindex];
+	      arr[minindex]=arr[i];
+	      arr[i]=temp;
+	   }
+	   for(int i=0;i<arr.length;i++)
+	   {
+	       System.out.print(arr[i]+" ");
+	   }
+	}
+}
